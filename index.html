@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -35,6 +35,69 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    background: linear-gradient(135deg, var(--green-dark) 0%, #033922 100%);
+    color: var(--white);
+    padding: 10px 0;
+    border-bottom: 2px solid var(--gold);
+    font-size: 15px;
+  }
+
+  .top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .top-bar-text {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .top-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+  }
+
+  .top-btn-call {
+    background: var(--gold);
+    color: var(--text);
+  }
+
+  .top-btn-call:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .top-btn-whatsapp {
+    background: #25d366;
+    color: var(--white);
+  }
+
+  .top-btn-whatsapp:hover {
+    background: #1eb956;
+    transform: translateY(-2px);
   }
   
   /* Header */
@@ -96,8 +159,9 @@
   nav ul {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 20px;
     flex-wrap: wrap;
+    align-items: center;
   }
   
   nav a {
@@ -131,48 +195,26 @@
   /* Hero */
   .hero {
     background: linear-gradient(135deg, var(--white) 0%, #f0fdf4 50%, #fffbeb 100%);
-    padding: 80px 0;
+    padding: 60px 0 80px;
     position: relative;
     overflow: hidden;
   }
   
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(10, 124, 74, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  
   .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
     align-items: center;
     position: relative;
     z-index: 1;
   }
   
   .hero-text h2 {
-    font-size: 48px;
+    font-size: 42px;
     color: var(--green-dark);
     font-weight: 900;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    margin-bottom: 15px;
+    line-height: 1.25;
   }
   
   .hero-text h2 span {
@@ -181,19 +223,60 @@
   }
   
   .hero-text p {
-    font-size: 18px;
+    font-size: 17px;
     color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+  }
+
+  /* Direct Phone Callout Box */
+  .hero-hotline-box {
+    background: #ffffff;
+    border: 2px dashed var(--gold);
+    border-radius: 16px;
+    padding: 16px 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    margin-bottom: 25px;
+  }
+
+  .hero-hotline-box .box-icon {
+    font-size: 30px;
+    background: #f0fdf4;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-hotline-box .box-text span {
+    font-size: 13px;
+    color: #666;
+    display: block;
+    font-weight: 600;
+  }
+
+  .hero-hotline-box .box-text a {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--green-dark);
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    display: block;
+    direction: ltr;
   }
   
   .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
   }
   
   .btn {
-    padding: 14px 32px;
+    padding: 13px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
@@ -218,68 +301,120 @@
     box-shadow: 0 8px 25px rgba(10, 124, 74, 0.4);
   }
   
-  .btn-gold {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  .btn-whatsapp-large {
+    background: #25d366;
     color: var(--white);
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
   }
   
-  .btn-gold:hover {
+  .btn-whatsapp-large:hover {
+    background: #1eb956;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
   }
-  
-  .hero-image {
+
+  /* Booking Form Card */
+  .booking-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  
-  .hero-appliance {
-    width: 100%;
-    max-width: 450px;
-    animation: float 4s ease-in-out infinite;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
-  }
-  
-  .hero-badge {
-    position: absolute;
-    background: var(--gold);
-    color: var(--white);
-    padding: 15px 25px;
-    border-radius: 50%;
-    font-weight: 900;
-    font-size: 14px;
+
+  .booking-card-header {
     text-align: center;
-    width: 110px;
-    height: 110px;
+    margin-bottom: 20px;
+  }
+
+  .booking-card-header h3 {
+    font-size: 22px;
+    color: var(--green-dark);
+    font-weight: 900;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-    animation: pulse 2s ease-in-out infinite;
+    gap: 8px;
   }
-  
-  .hero-badge.top-left { top: 10%; left: 0; }
-  .hero-badge.bottom-right { bottom: 10%; right: 0; }
-  
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+  .booking-card-header p {
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  .form-group input, 
+  .form-group select, 
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    color: #222;
+    background: #fdfdfd;
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  .form-group input:focus, 
+  .form-group select:focus, 
+  .form-group textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(10, 124, 74, 0.15);
+    background: #fff;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .btn-submit-whatsapp {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s;
+  }
+
+  .btn-submit-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
   }
   
   /* Disclaimer */
   .disclaimer {
     background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
     border-right: 5px solid var(--gold);
-    padding: 25px;
-    margin: 40px auto;
+    padding: 22px 25px;
+    margin: 35px auto;
     max-width: 1200px;
     border-radius: 10px;
     display: flex;
@@ -290,42 +425,42 @@
   }
   
   .disclaimer-icon {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background: var(--gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 30px;
+    font-size: 28px;
     flex-shrink: 0;
   }
   
   .disclaimer-text h3 {
     color: var(--gold-dark);
-    font-size: 20px;
+    font-size: 19px;
     margin-bottom: 5px;
   }
   
   .disclaimer-text p {
     color: #666;
-    font-size: 15px;
+    font-size: 14.5px;
   }
   
   /* Services */
   .services {
-    padding: 80px 0;
+    padding: 70px 0;
     background: var(--white);
   }
   
   .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
   
   .section-title h2 {
-    font-size: 38px;
+    font-size: 36px;
     color: var(--green-dark);
     font-weight: 900;
     margin-bottom: 10px;
@@ -337,7 +472,7 @@
   
   .section-title p {
     color: #666;
-    font-size: 17px;
+    font-size: 16px;
   }
   
   .services-grid {
@@ -373,7 +508,7 @@
   }
   
   .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: var(--green-light);
     box-shadow: 0 20px 40px rgba(10, 124, 74, 0.15);
   }
@@ -385,7 +520,7 @@
   
   .service-image {
     width: 100%;
-    height: 220px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -403,7 +538,7 @@
   }
   
   .service-card:hover .service-image img {
-    transform: scale(1.1) rotate(3deg);
+    transform: scale(1.08);
   }
   
   .service-card h3 {
@@ -433,6 +568,257 @@
   
   .service-card .btn-card:hover {
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  }
+
+  /* Hotline Banner */
+  .hotline-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: var(--white);
+    padding: 35px 0;
+    text-align: center;
+  }
+  
+  .hotline-banner h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  
+  .hotline-banner .number {
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    direction: ltr;
+    display: inline-block;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .hotline-banner-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  /* Features */
+  .features {
+    padding: 70px 0;
+    background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+  }
+  
+  .feature-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    color: var(--white);
+    font-size: 32px;
+    border: 3px solid var(--gold);
+  }
+  
+  .feature-card h3 {
+    color: var(--green-dark);
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+  
+  .feature-card p {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Privacy & Warranty */
+  .info-section {
+    padding: 70px 0;
+    background: var(--white);
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  
+  .info-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    padding: 35px 25px;
+    border-radius: 20px;
+    border-top: 5px solid var(--green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  
+  .info-card.warranty {
+    background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+    border-top-color: var(--gold);
+  }
+  
+  .info-card h2 {
+    color: var(--green-dark);
+    font-size: 26px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .info-card.warranty h2 {
+    color: var(--gold-dark);
+  }
+  
+  .info-card h3 {
+    color: var(--green-dark);
+    margin: 18px 0 8px;
+    font-size: 17px;
+  }
+  
+  .info-card.warranty h3 {
+    color: var(--gold-dark);
+  }
+  
+  .info-card p, .info-card li {
+    color: #555;
+    font-size: 14.5px;
+    line-height: 1.8;
+  }
+  
+  .info-card ul {
+    padding-right: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+    color: var(--white);
+    padding: 60px 0 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+    margin-bottom: 35px;
+  }
+  
+  .footer-col h3 {
+    color: var(--gold-light);
+    font-size: 19px;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  
+  .footer-col p, .footer-col a {
+    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+    line-height: 2;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .footer-col a:hover {
+    color: var(--gold-light);
+  }
+  
+  .footer-col .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .footer-col .contact-item .icon {
+    width: 38px;
+    height: 38px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+  }
+  
+  .footer-bottom .gold {
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+  
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 62px;
+    height: 62px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    z-index: 999;
+    animation: whatsappPulse 2s ease-in-out infinite;
+    transition: transform 0.3s;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes whatsappPulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+    50% { box-shadow: 0 8px 35px rgba(37, 211, 102, 0.8), 0 0 0 12px rgba(37, 211, 102, 0.15); }
+  }
+  
+  .whatsapp-label {
+    position: fixed;
+    bottom: 33px;
+    left: 95px;
+    background: var(--white);
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    font-weight: 700;
+    color: var(--green-dark);
+    z-index: 999;
+    font-size: 13.5px;
+    border: 1px solid #25d366;
+    direction: ltr;
   }
   
   /* Modal */
@@ -464,7 +850,7 @@
   .modal {
     background: var(--white);
     border-radius: 25px;
-    max-width: 700px;
+    max-width: 650px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
@@ -474,14 +860,14 @@
   }
   
   @keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
+    from { transform: translateY(40px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
   
   .modal-header {
     background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
     color: var(--white);
-    padding: 25px 30px;
+    padding: 20px 25px;
     border-radius: 22px 22px 0 0;
     display: flex;
     justify-content: space-between;
@@ -489,18 +875,18 @@
   }
   
   .modal-header h2 {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 900;
   }
   
   .modal-close {
     background: var(--gold);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: var(--white);
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -515,122 +901,61 @@
   }
   
   .modal-body {
-    padding: 30px;
+    padding: 25px;
   }
   
-  /* Modal Contact - TOP */
   .modal-contact-top {
     background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
     color: var(--white);
-    padding: 25px;
+    padding: 22px;
     border-radius: 15px;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border: 2px solid var(--gold);
     position: relative;
-    overflow: hidden;
-  }
-  
-  .modal-contact-top::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
   }
   
   .modal-contact-top h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    position: relative;
+    font-size: 20px;
+    margin-bottom: 8px;
   }
   
   .modal-contact-top .hotline-number {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 900;
     color: var(--gold-light);
-    margin: 10px 0;
-    letter-spacing: 4px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    position: relative;
-    animation: hotlinePulse 2s ease-in-out infinite;
-  }
-  
-  @keyframes hotlinePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  
-  .modal-contact-top .whatsapp-number {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--white);
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    position: relative;
-  }
-  
-  .modal-contact-top .whatsapp-icon {
-    width: 35px;
-    height: 35px;
-    background: #25d366;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    margin: 8px 0;
+    letter-spacing: 2px;
+    direction: ltr;
   }
   
   .modal-contact-top .btn-call {
     background: var(--gold);
     color: var(--white);
-    padding: 12px 30px;
+    padding: 10px 24px;
     border-radius: 50px;
     text-decoration: none;
     display: inline-block;
     font-weight: 700;
-    margin: 8px 5px;
+    margin: 6px 4px;
     transition: all 0.3s;
-    position: relative;
-  }
-  
-  .modal-contact-top .btn-call:hover {
-    background: var(--white);
-    color: var(--green);
-    transform: translateY(-2px);
   }
   
   .modal-contact-top .btn-call.whatsapp-btn {
     background: #25d366;
   }
   
-  .modal-contact-top .btn-call.whatsapp-btn:hover {
-    background: var(--white);
-    color: #25d366;
-  }
-  
   .modal-appliance {
     width: 100%;
-    max-width: 280px;
-    margin: 0 auto 25px;
+    max-width: 220px;
+    margin: 0 auto 20px;
     display: block;
-    animation: modalFloat 3s ease-in-out infinite;
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2));
-  }
-  
-  @keyframes modalFloat {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    50% { transform: translateY(-15px) rotate(3deg); }
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
   }
   
   .modal-info {
     background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
-    padding: 20px;
+    padding: 18px;
     border-radius: 15px;
     margin-bottom: 20px;
   }
@@ -638,7 +963,7 @@
   .modal-info h3 {
     color: var(--green-dark);
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .modal-info ul {
@@ -647,10 +972,11 @@
   }
   
   .modal-info li {
-    padding: 8px 0;
+    padding: 6px 0;
     color: #444;
     position: relative;
     padding-right: 25px;
+    font-size: 14px;
   }
   
   .modal-info li::before {
@@ -659,281 +985,42 @@
     right: 0;
     color: var(--green);
     font-weight: 900;
-    font-size: 18px;
-  }
-  
-  /* Features */
-  .features {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-  
-  .feature-card {
-    background: var(--white);
-    padding: 35px 25px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    transition: all 0.3s;
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .feature-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    color: var(--white);
-    font-size: 36px;
-    border: 3px solid var(--gold);
-  }
-  
-  .feature-card h3 {
-    color: var(--green-dark);
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .feature-card p {
-    color: #666;
-    font-size: 14px;
-  }
-  
-  /* Privacy & Warranty */
-  .info-section {
-    padding: 80px 0;
-    background: var(--white);
-  }
-  
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-  
-  .info-card {
-    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
-    padding: 40px 30px;
-    border-radius: 20px;
-    border-top: 5px solid var(--green);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  }
-  
-  .info-card.warranty {
-    background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
-    border-top-color: var(--gold);
-  }
-  
-  .info-card h2 {
-    color: var(--green-dark);
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .info-card.warranty h2 {
-    color: var(--gold-dark);
-  }
-  
-  .info-card h2 .icon {
-    width: 50px;
-    height: 50px;
-    background: var(--green);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 24px;
-  }
-  
-  .info-card.warranty h2 .icon {
-    background: var(--gold);
-  }
-  
-  .info-card h3 {
-    color: var(--green-dark);
-    margin: 20px 0 10px;
-    font-size: 18px;
-  }
-  
-  .info-card.warranty h3 {
-    color: var(--gold-dark);
-  }
-  
-  .info-card p, .info-card li {
-    color: #555;
-    font-size: 15px;
-    line-height: 1.8;
-  }
-  
-  .info-card ul {
-    padding-right: 20px;
-  }
-  
-  .info-card li {
-    margin-bottom: 8px;
-  }
-  
-  /* Footer */
-  footer {
-    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
-    color: var(--white);
-    padding: 60px 0 20px;
-  }
-  
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  
-  .footer-col h3 {
-    color: var(--gold-light);
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-  
-  .footer-col p, .footer-col a {
-    color: rgba(255,255,255,0.9);
-    font-size: 15px;
-    line-height: 2;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .footer-col a:hover {
-    color: var(--gold-light);
-  }
-  
-  .footer-col .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  
-  .footer-col .contact-item .icon {
-    width: 35px;
-    height: 35px;
-    background: var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 20px;
-    text-align: center;
-    color: rgba(255,255,255,0.8);
-    font-size: 14px;
-  }
-  
-  .footer-bottom .gold {
-    color: var(--gold-light);
-    font-weight: 700;
-  }
-  
-  /* WhatsApp Button */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 65px;
-    height: 65px;
-    background: #25d366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 32px;
-    text-decoration: none;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-    z-index: 999;
-    animation: whatsappPulse 2s ease-in-out infinite;
-    transition: transform 0.3s;
-  }
-  
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-  }
-  
-  @keyframes whatsappPulse {
-    0%, 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
-    50% { box-shadow: 0 8px 35px rgba(37, 211, 102, 0.8), 0 0 0 15px rgba(37, 211, 102, 0.1); }
-  }
-  
-  .whatsapp-label {
-    position: fixed;
-    bottom: 35px;
-    left: 100px;
-    background: var(--white);
-    padding: 10px 18px;
-    border-radius: 50px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    font-weight: 700;
-    color: var(--green-dark);
-    z-index: 999;
-    font-size: 14px;
-  }
-  
-  /* Hotline Banner */
-  .hotline-banner {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-    color: var(--white);
-    padding: 30px 0;
-    text-align: center;
-  }
-  
-  .hotline-banner h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
-  .hotline-banner .number {
-    font-size: 50px;
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    font-size: 16px;
   }
   
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .hero-content { grid-template-columns: 1fr; text-align: center; }
-    .hero-text h2 { font-size: 32px; }
+    .hero-hotline-box { justify-content: center; }
     .hero-buttons { justify-content: center; }
+    .top-bar-content { justify-content: center; text-align: center; }
     .info-grid { grid-template-columns: 1fr; }
-    .section-title h2 { font-size: 28px; }
-    nav ul { justify-content: center; }
-    .header-content { justify-content: center; text-align: center; }
-    .hotline-banner .number { font-size: 36px; }
-    .modal-contact-top .hotline-number { font-size: 32px; }
-    .modal-contact-top .whatsapp-number { font-size: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-text h2 { font-size: 28px; }
+    .form-row { grid-template-columns: 1fr; }
+    .hotline-banner .number { font-size: 32px; }
+    .whatsapp-label { display: none; }
   }
 </style>
 </head>
 <body>
+
+<!-- Top Highlighted Phone Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-content">
+      <div class="top-bar-text">
+        <span>⚡ خدمة صيانة فورية لجميع المحافظات | متاحون 24 ساعة:</span>
+      </div>
+      <div class="top-bar-actions">
+        <a href="tel:01143188588" class="top-btn top-btn-call">📞 01143188588</a>
+        <a href="https://wa.me/201143188588" class="top-btn top-btn-whatsapp" target="_blank">💬 واتساب مباشر</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Header -->
 <header>
@@ -949,10 +1036,10 @@
       <nav>
         <ul>
           <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#booking">طلب صيانة</a></li>
           <li><a href="#services">خدماتنا</a></li>
           <li><a href="#features">مميزاتنا</a></li>
-          <li><a href="#privacy">الخصوصية</a></li>
-          <li><a href="#warranty">الضمان</a></li>
+          <li><a href="#privacy">الخصوصية والضمان</a></li>
           <li><a href="#contact">تواصل معنا</a></li>
         </ul>
       </nav>
@@ -960,23 +1047,85 @@
   </div>
 </header>
 
-<!-- Hero -->
+<!-- Hero Section with WhatsApp Booking Form -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
+      
       <div class="hero-text">
-        <h2>Smart Fix <span>مركز صيانة متخصص</span></h2>
-        <p>نقدم خدمات صيانة احترافية لجميع الأجهزة الكهربائية المنزلية بأيدي فنيين متخصصين وقطع غيار أصلية مع ضمان على الإصلاح</p>
+        <h2>Smart Fix <span>مركز صيانة معتمد ومستقل</span></h2>
+        <p>نصلك حتى باب المنزل لصيانة فورية بأيدي نخبة من المهندسين والفنيين مع قطع غيار أصلية وضمان موثق على الإصلاح.</p>
+        
+        <!-- Highlighted Direct Contact Block -->
+        <div class="hero-hotline-box">
+          <div class="box-icon">📞</div>
+          <div class="box-text">
+            <span>اتصال سريع ومباشر على:</span>
+            <a href="tel:01143188588">01143188588</a>
+          </div>
+        </div>
+
         <div class="hero-buttons">
-          <a href="tel:19387" class="btn btn-primary">📞 اتصل بالخط الساخن 19387</a>
-          <a href="https://wa.me/2001102670999" class="btn btn-gold" target="_blank">💬 واتساب</a>
+          <a href="tel:01143188588" class="btn btn-primary">📞 اتصل بالدعم الفني</a>
+          <a href="https://wa.me/201143188588" class="btn btn-whatsapp-large" target="_blank">💬 محادثة واتساب</a>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/12f7d9171-09b3-4553-978b-5f206f83593d.png" alt="ثلاجة" class="hero-appliance">
-        <div class="hero-badge top-left">ضمان<br>الإصلاح</div>
-        <div class="hero-badge bottom-right">فنيون<br>متخصصون</div>
+
+      <!-- Quick WhatsApp Booking Form -->
+      <div class="booking-card" id="booking">
+        <div class="booking-card-header">
+          <h3>💬 طلب صيانة عبر واتساب</h3>
+          <p>املا بيانات العطل وسيتم تحويلك لمحادثة الفني مباشرة</p>
+        </div>
+        <form id="whatsappForm" onsubmit="sendWhatsAppOrder(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientName">اسم العميل *</label>
+              <input type="text" id="clientName" placeholder="الاسم بالكامل" required>
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">رقم الهاتف للتواصل *</label>
+              <input type="tel" id="clientPhone" placeholder="01xxxxxxxxx" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="applianceType">نوع الجهاز *</label>
+              <select id="applianceType" required>
+                <option value="">اختر الجهاز...</option>
+                <option value="ثلاجة">ثلاجة</option>
+                <option value="غسالة">غسالة</option>
+                <option value="ديب فريزر">ديب فريزر</option>
+                <option value="ميكروويف">ميكروويف</option>
+                <option value="شاشة">شاشة تلفزيون</option>
+                <option value="تكييف">تكييف</option>
+                <option value="سخان / بوتاجاز">سخان / بوتاجاز</option>
+                <option value="أخرى">جهاز آخر</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="brandName">ماركة الجهاز</label>
+              <input type="text" id="brandName" placeholder="مثال: توشيبا، شارب، LG...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="clientAddress">العنوان / المحافظة</label>
+            <input type="text" id="clientAddress" placeholder="المنطقة أو الحي بالتفصيل">
+          </div>
+
+          <div class="form-group">
+            <label for="issueDescription">شرح العطل</label>
+            <textarea id="issueDescription" rows="2" placeholder="اكتب وصفاً مختصراً للمشكلة في جهازك"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-whatsapp">
+            <span>إرسال الطلب عبر واتساب</span> 💬
+          </button>
+        </form>
       </div>
+
     </div>
   </div>
 </section>
@@ -987,7 +1136,7 @@
     <div class="disclaimer-icon">⚠️</div>
     <div class="disclaimer-text">
       <h3>تنويه هام</h3>
-      <p>نحن مركز صيانة مستقل تماماً وغير تابعين لأي علامة تجارية أو شركة مصنعة. جميع العلامات التجارية المذكورة هي ملك لأصحابها وتُستخدم فقط للدلالة على الأجهزة التي نقوم بصيانتها.</p>
+      <p>نحن مركز صيانة مستقل تماماً وغير تابعين لأي توكيل أو علامة تجارية مسجلة. جميع الماركات والأسماء التجارية المذكورة ملك لأصحابها وتُذكر لغرض تحديد نوع الجهاز فقط.</p>
     </div>
   </div>
 </div>
@@ -996,8 +1145,8 @@
 <section class="services" id="services">
   <div class="container">
     <div class="section-title">
-      <h2>خدمات <span>الصيانة</span></h2>
-      <p>نقدم خدمات صيانة شاملة لجميع الأجهزة الكهربائية المنزلية</p>
+      <h2>خدمات <span>الصيانة المتخصصة</span></h2>
+      <p>إصلاح فوري بالمنزل لجميع الموديلات والأنواع</p>
     </div>
     <div class="services-grid">
       
@@ -1006,7 +1155,7 @@
           <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/12f7d9171-09b3-4553-978b-5f206f83593d.png" alt="ثلاجة">
         </div>
         <h3>صيانة الثلاجات</h3>
-        <p>إصلاح جميع أعطال الثلاجات بجميع الماركات</p>
+        <p>إصلاح مشاكل التبريد والكمبروسر مع كشف دقيق بالمنزل</p>
         <span class="btn-card">اطلب الصيانة</span>
       </div>
       
@@ -1015,7 +1164,7 @@
           <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/15b078244-2004-46fb-a3cb-96bec45685ce.png" alt="غسالة">
         </div>
         <h3>صيانة الغسالات</h3>
-        <p>صيانة وإصلاح الغسالات الأوتوماتيك والعادية</p>
+        <p>صيانة وإصلاح الغسالات الأوتوماتيك والفوق أوتوماتيك</p>
         <span class="btn-card">اطلب الصيانة</span>
       </div>
       
@@ -1024,7 +1173,7 @@
           <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/17dc873f4-96b6-40df-bcc0-8601abac0afb.png" alt="ديب فريزر">
         </div>
         <h3>صيانة الديب فريزر</h3>
-        <p>إصلاح جميع أعطال الفريزر والمجمدات</p>
+        <p>إصلاح مشاكل التجميد، الثرموستات وتسريب الفريون</p>
         <span class="btn-card">اطلب الصيانة</span>
       </div>
       
@@ -1033,7 +1182,7 @@
           <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/1658fdde8-e8b7-431b-8a5d-c4f1b9b34e46.png" alt="ميكروويف">
         </div>
         <h3>صيانة الميكروويف</h3>
-        <p>إصلاح الميكروويف بجميع أنواعه وماركاته</p>
+        <p>إصلاح الماجنترون والدوائر الكهربائية لجميع الماركات</p>
         <span class="btn-card">اطلب الصيانة</span>
       </div>
       
@@ -1042,7 +1191,7 @@
           <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/1ab2d45bf-3bd9-407f-9c4b-5bacf5a12800.png" alt="تلفزيون">
         </div>
         <h3>صيانة الشاشات</h3>
-        <p>إصلاح شاشات LED و LCD و Smart TV</p>
+        <p>إصلاح البانل وكروت الشاشة والليدات لجميع الشاشات</p>
         <span class="btn-card">اطلب الصيانة</span>
       </div>
       
@@ -1050,8 +1199,8 @@
         <div class="service-image">
           <img src="https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/1ed2c6aaa-cb22-439a-a7f8-79884c3d145e.png" alt="مكيف">
         </div>
-        <h3>صيانة المكيفات</h3>
-        <p>تركيب وصيانة وإصلاح جميع أنواع المكيفات</p>
+        <h3>صيانة التكييفات</h3>
+        <p>شحن فريون، فك وتركيب، وغسيل وتنظيف دوري شامل</p>
         <span class="btn-card">اطلب الصيانة</span>
       </div>
       
@@ -1062,9 +1211,13 @@
 <!-- Hotline Banner -->
 <section class="hotline-banner">
   <div class="container">
-    <h2>📞 الخط الساخن لطلب الخدمة</h2>
-    <div class="number">19387</div>
-    <p style="margin-top: 10px;">متاحون على مدار الساعة لخدمتكم</p>
+    <h2>📞 الرقم المباشر لخدمة الصيانة والدعم الفني</h2>
+    <a href="tel:01143188588" class="number">01143188588</a>
+    <p style="margin-top: 10px; font-weight: 600;">متاحون طوال أيام الأسبوع لاستقبال استفساراتكم وحجز الزيارات المنزلية</p>
+    <div class="hotline-banner-actions">
+      <a href="tel:01143188588" class="btn btn-primary" style="background: #ffffff; color: var(--green-dark);">📞 اتصل الآن</a>
+      <a href="https://wa.me/201143188588" class="btn btn-whatsapp-large" target="_blank">💬 تواصل واتساب</a>
+    </div>
   </div>
 </section>
 
@@ -1073,28 +1226,28 @@
   <div class="container">
     <div class="section-title">
       <h2>لماذا <span>تختار Smart Fix</span></h2>
-      <p>نتميز بتقديم أفضل خدمات الصيانة بأعلى جودة</p>
+      <p>خدمة صيانة تعتمد عليها بسرعة وأمان تام</p>
     </div>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
-        <h3>سرعة الاستجابة</h3>
-        <p>نصلك في أسرع وقت ممكن بعد الاتصال بالخط الساخن</p>
+        <h3>سرعة الوصول</h3>
+        <p>فريقنا يتحرك فور تسجيل الطلب لمعاينة الجهاز دون تأخير</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔧</div>
-        <h3>فنيون متخصصون</h3>
-        <p>فريق من الفنيين المدربين على أعلى مستوى</p>
+        <h3>فنيون معتمدون</h3>
+        <p>خبرة طويلة في التعامل مع كافة الأعطال المعقدة</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">✅</div>
-        <h3>ضمان على الإصلاح</h3>
-        <p>نقدم ضماناً على جميع أعمال الصيانة وفقاً للشروط</p>
+        <div class="feature-icon">🛡️</div>
+        <h3>ضمان معتمد</h3>
+        <p>شهادة ضمان رسمية على قطع الغيار وأعمال الصيانة المنفذة</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">💰</div>
-        <h3>أسعار مناسبة</h3>
-        <p>أسعار تنافسية وشفافة بدون أي رسوم خفية</p>
+        <h3>تسعير عادل وشفاف</h3>
+        <p>تحديد التكلفة قبل البدء في الإصلاح بدون أي مصاريف مفاجئة</p>
       </div>
     </div>
   </div>
@@ -1105,38 +1258,23 @@
   <div class="container">
     <div class="info-grid">
       <div class="info-card">
-        <h2><span class="icon">🔒</span> سياسة الخصوصية</h2>
-        <p>نحن في Smart Fix نلتزم بحماية خصوصية عملائنا وبياناتهم الشخصية. تتضمن سياسة الخصوصية لدينا:</p>
+        <h2>🔒 سياسة الخصوصية</h2>
+        <p>نلتزم بحماية بيانات العملاء والخصوصية التامة لجميع العملاء:</p>
         <h3>جمع البيانات</h3>
-        <p>نقوم بجمع البيانات الشخصية اللازمة فقط لتقديم خدمة الصيانة مثل الاسم ورقم الهاتف والعنوان.</p>
-        <h3>استخدام البيانات</h3>
-        <ul>
-          <li>التواصل مع العميل لترتيب مواعيد الصيانة</li>
-          <li>إرسال فواتير وبيانات الإصلاح</li>
-          <li>تقديم عروض وخدمات مستقبلية (بموافقة العميل)</li>
-        </ul>
-        <h3>حماية البيانات</h3>
-        <p>نلتزم بعدم مشاركة بيانات العملاء مع أي طرف ثالث إلا بموافقة صريحة من العميل أو وفقاً للقانون.</p>
-        <h3>حقوق العميل</h3>
-        <p>للعميل الحق في الاطلاع على بياناته أو تعديلها أو حذفها في أي وقت.</p>
+        <p>نجمع فقط البيانات الأساسية كالعنوان والهاتف لجدولة زيارة الفني.</p>
+        <h3>سرية المعلومات</h3>
+        <p>لا يتم تداول أو بيع أي بيانات لأي جهة تحت أي بند.</p>
       </div>
       
       <div class="info-card warranty" id="warranty">
-        <h2><span class="icon">🛡️</span> سياسة الضمان</h2>
-        <p>نقدم في Smart Fix ضماناً على جميع أعمال الصيانة وفقاً للشروط التالية:</p>
+        <h2>🛡️ سياسة الضمان</h2>
+        <p>ضمان شامل ومكتوب لضمان راحة بالك بعد الإصلاح:</p>
         <h3>شروط الضمان</h3>
         <ul>
-          <li>الضمان ساري على قطع الغيار المستبدلة وأعمال الإصلاح</li>
-          <li>مدة الضمان تختلف حسب نوع العطل وقطع الغيار المستخدمة</li>
-          <li>الضمان لا يشمل الأعطال الناتجة عن سوء الاستخدام</li>
-          <li>الضمان لا يشمل الأعطال الناتجة عن عوامل خارجية (كهرباء، مياه، إلخ)</li>
-          <li>يجب الاحتفاظ بفاتورة الإصلاح لإثبات حق الضمان</li>
-          <li>الضمان ساري فقط على نفس العطل الذي تم إصلاحه</li>
+          <li>الضمان يشمل القطع المستبدلة وأعمال الصيانة الموثقة بالفاتورة.</li>
+          <li>صلاحية الضمان تمتد من شهر وحتى 6 أشهر بحسب طبيعة القطعة.</li>
+          <li>المتابعة الفورية في حال تكرار نفس العطل دون أي تكلفة إضافية.</li>
         </ul>
-        <h3>مدة الضمان</h3>
-        <p>تتراوح مدة الضمان من 30 يوماً إلى 6 أشهر حسب نوع الإصلاح وقطع الغيار المستخدمة، ويتم تحديد المدة في فاتورة الإصلاح.</p>
-        <h3>إجراءات المطالبة بالضمان</h3>
-        <p>في حالة حدوث نفس العطل خلال فترة الضمان، يرجى الاتصال بالخط الساخن 19387 مع إحضار فاتورة الإصلاح.</p>
       </div>
     </div>
   </div>
@@ -1148,30 +1286,23 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h3>Smart Fix</h3>
-        <p>مركز صيانة مستقل متخصص في صيانة جميع الأجهزة الكهربائية المنزلية بأعلى جودة وأفضل الأسعار.</p>
-        <p style="margin-top: 15px; color: var(--gold-light); font-weight: 700;">⚠️ مركز صيانة مستقل - غير تابع لأي علامة تجارية</p>
+        <p>مركز صيانة متخصص ومستقل لصيانة جميع الأجهزة الكهربائية المنزلية بدقة وسرعة وبأفضل الأسعار.</p>
+        <p style="margin-top: 15px; color: var(--gold-light); font-weight: 700;">⚠️ مركز مستقل غير تابع للتوكيلات الرسمية</p>
       </div>
       <div class="footer-col">
         <h3>تواصل معنا</h3>
         <div class="contact-item">
           <div class="icon">📞</div>
           <div>
-            <strong>الخط الساخن</strong><br>
-            <a href="tel:19387">19387</a>
+            <strong>الهاتف الموحد</strong><br>
+            <a href="tel:01143188588" style="direction: ltr; text-align: right;">01143188588</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="icon">💬</div>
           <div>
-            <strong>واتساب</strong><br>
-            <a href="https://wa.me/2001102670999" target="_blank">01102670999</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon">📍</div>
-          <div>
-            <strong>العنوان</strong><br>
-            بولاق الدكرور - الجيزة - مصر
+            <strong>واتساب مباشر</strong><br>
+            <a href="https://wa.me/201143188588" target="_blank" style="direction: ltr; text-align: right;">01143188588</a>
           </div>
         </div>
       </div>
@@ -1182,22 +1313,22 @@
         <a href="#" onclick="openModal('deepfreezer'); return false;">صيانة الديب فريزر</a>
         <a href="#" onclick="openModal('microwave'); return false;">صيانة الميكروويف</a>
         <a href="#" onclick="openModal('tv'); return false;">صيانة الشاشات</a>
-        <a href="#" onclick="openModal('ac'); return false;">صيانة المكيفات</a>
+        <a href="#" onclick="openModal('ac'); return false;">صيانة التكييفات</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Smart Fix - جميع الحقوق محفوظة | <span class="gold">بولاق الدكرور - الجيزة - مصر</span></p>
+      <p>© 2026 Smart Fix - جميع الحقوق محفوظة | خدمة الصيانة: <a href="tel:01143188588" class="gold">01143188588</a></p>
     </div>
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/2001102670999" class="whatsapp-float" target="_blank" title="تواصل واتساب">
-  <svg width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/201143188588" class="whatsapp-float" target="_blank" title="تواصل واتساب">
+  <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
   </svg>
 </a>
-<div class="whatsapp-label">واتساب: 01102670999</div>
+<div class="whatsapp-label">01143188588</div>
 
 <!-- Modal -->
 <div class="modal-overlay" id="modalOverlay">
@@ -1210,20 +1341,12 @@
       
       <!-- Contact Info at TOP -->
       <div class="modal-contact-top">
-        <h3>📞 للتواصل وطلب الإصلاح</h3>
-        <div class="hotline-number">19387</div>
-        <p style="margin-bottom: 10px; position: relative;">الخط الساخن - متاح 24 ساعة</p>
-        <div class="whatsapp-number">
-          <span class="whatsapp-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-            </svg>
-          </span>
-          <span>واتساب: 01102670999</span>
-        </div>
-        <div style="margin-top: 15px; position: relative;">
-          <a href="tel:19387" class="btn-call">📞 اتصل الآن</a>
-          <a href="https://wa.me/2001102670999" class="btn-call whatsapp-btn" target="_blank">💬 واتساب</a>
+        <h3>📞 لطلب صيانة هذا الجهاز فوراً</h3>
+        <div class="hotline-number">01143188588</div>
+        <p style="margin-bottom: 10px;">خدمة سريعة لجميع المناطق</p>
+        <div style="margin-top: 15px;">
+          <a href="tel:01143188588" class="btn-call">📞 اتصال مباشر</a>
+          <a href="https://wa.me/201143188588" class="btn-call whatsapp-btn" target="_blank">💬 واتساب سريع</a>
         </div>
       </div>
       
@@ -1243,77 +1366,62 @@
       image: 'https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/12f7d9171-09b3-4553-978b-5f206f83593d.png',
       services: [
         'إصلاح مشاكل التبريد والتجميد',
-        'استبدال الكمبروسر والموتور',
-        'إصلاح تسريب الفريون',
+        'استبدال الكمبروسر والموتور الأصلي',
+        'شحن الفريون ومعالجة التسريب',
         'تغيير الثرموستات والحساسات',
-        'إصلاح باب الثلاجة والمطاط',
-        'صيانة نظام إذابة الجليد',
-        'صيانة جميع الماركات العالمية'
+        'إصلاح جوان وباب الثلاجة',
+        'صيانة نظام الديفروست وإذابة الجليد'
       ]
     },
     washer: {
       title: 'صيانة الغسالات',
       image: 'https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/15b078244-2004-46fb-a3cb-96bec45685ce.png',
       services: [
-        'إصلاح الغسالات الأوتوماتيك',
-        'إصلاح الغسالات العادية',
-        'استبدال البلف والسير',
-        'إصلاح مشاكل الصرف',
-        'تغيير الكارتة الإلكترونية',
-        'إصلاح مشاكل الاهتزاز والضوضاء',
-        'صيانة جميع الماركات'
+        'إصلاح الغسالات الفول أوتوماتيك والفوق أوتوماتيك',
+        'استبدال مضخة الصرف والبلف',
+        'تغيير رولمان البلي والمساعدين لمنع الاهتزاز',
+        'إصلاح وبرمجة الكارتات واللوحات الإلكترونية',
+        'حل مشاكل عدم سحب أو طرد المياه'
       ]
     },
     deepfreezer: {
       title: 'صيانة الديب فريزر',
       image: 'https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/17dc873f4-96b6-40df-bcc0-8601abac0afb.png',
       services: [
-        'إصلاح مشاكل التجميد',
-        'استبدال الكمبروسر',
-        'إصلاح تسريب الفريون',
-        'تغيير الثرموستات',
-        'صيانة نظام التحكم في الحرارة',
-        'إصلاح مشاكل الإضاءة',
-        'صيانة جميع الماركات'
+        'إصلاح ضعف التجميد والبرودة',
+        'تغيير موتور وكمبروسر مع الضمان',
+        'معالجة تسريب شحنة الفريون وضغط الدائرة',
+        'صيانة ديب فريزر أدراج أو صندوق (أفقي)'
       ]
     },
     microwave: {
       title: 'صيانة الميكروويف',
       image: 'https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/1658fdde8-e8b7-431b-8a5d-c4f1b9b34e46.png',
       services: [
-        'إصلاح مشاكل التسخين',
-        'استبدال الماجنترون',
-        'إصلاح الباب والمفتاح',
-        'تغيير اللوحة الإلكترونية',
-        'إصلاح مشاكل الإضاءة',
-        'صيانة الميكروويف العادي والجريل',
-        'صيانة جميع الماركات'
+        'إصلاح مشاكل عدم التسخين (الماجنترون)',
+        'استبدال لوحة المفاتيح والتشاتش',
+        'إصلاح الموتور الدوار وصينية الميكروويف',
+        'علاج مشاكل الشرر الداخلي'
       ]
     },
     tv: {
       title: 'صيانة الشاشات',
       image: 'https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/1ab2d45bf-3bd9-407f-9c4b-5bacf5a12800.png',
       services: [
-        'إصلاح شاشات LED و LCD',
-        'إصلاح شاشات Smart TV',
-        'استبدال اللوحة الأم',
-        'إصلاح مشاكل الصورة',
-        'إصلاح مشاكل الصوت',
-        'تغيير الإضاءة الخلفية',
-        'صيانة جميع الماركات'
+        'تغيير مساطر ليدات الإضاءة الخلفية بأصلية',
+        'إصلاح كروت الباور والماين بورد',
+        'إصلاح مشاكل الصوت بدون صورة والعكس',
+        'صيانة شاشات LED و LCD و Smart 4K'
       ]
     },
     ac: {
-      title: 'صيانة المكيفات',
+      title: 'صيانة التكييفات',
       image: 'https://image.qwenlm.ai/public_source/50b448b3-1511-4016-a40b-f1535bc78044/1ed2c6aaa-cb22-439a-a7f8-79884c3d145e.png',
       services: [
-        'تركيب المكيفات الجديدة',
-        'فك ونقل المكيفات',
-        'شحن الفريون',
-        'صيانة دورية وتنظيف',
-        'إصلاح مشاكل التبريد',
-        'استبدال الكمبروسر',
-        'صيانة جميع الماركات'
+        'فك وتركيب ونقل التكييفات',
+        'شحن فريون أصلي كشف تسريب شامل',
+        'غسيل وصيانة بالضغط للوحدتين',
+        'علاج تنقيط المياه وضعف دفع الهواء'
       ]
     }
   };
@@ -1344,16 +1452,38 @@
   }
   
   document.getElementById('modalOverlay').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeModal();
-    }
+    if (e.target === this) closeModal();
   });
   
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
+    if (e.key === 'Escape') closeModal();
   });
+
+  // Handle WhatsApp Form Submission
+  function sendWhatsAppOrder(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('clientName').value.trim();
+    const phone = document.getElementById('clientPhone').value.trim();
+    const appliance = document.getElementById('applianceType').value;
+    const brand = document.getElementById('brandName').value.trim() || 'غير محدد';
+    const address = document.getElementById('clientAddress').value.trim() || 'غير محدد';
+    const issue = document.getElementById('issueDescription').value.trim() || 'صيانة عامة';
+
+    const message = 
+      `*طلب صيانة جديد عبر الموقع:*\n` +
+      `👤 *الاسم:* ${name}\n` +
+      `📞 *رقم الهاتف:* ${phone}\n` +
+      `🛠️ *نوع الجهاز:* ${appliance}\n` +
+      `🏷️ *الماركة:* ${brand}\n` +
+      `📍 *العنوان:* ${address}\n` +
+      `📝 *وصف المشكلة:* ${issue}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/201143188588?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  }
 </script>
 
 </body>
